@@ -13,7 +13,7 @@ class LengthConversions {
     private static function validateInput($value, $method) {
         // Make sure we have a numeric value
         if (!is_numeric($value)) {
-            throw new InvalidArgumentException("Invalid input for $method");
+            throw new InvalidArgumentException("Invalid input for $method: expected numeric, got " . gettype($value) . " (" . var_export($value, true) . ")");
         }
     }
 
