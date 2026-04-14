@@ -159,7 +159,7 @@ class ConversionsTest extends TestCase
             $className = $parts[0];
             $methodName = $parts[1];
             $className::$methodName($value);
-            
+
             // If we get here, no exception was thrown
             $this->fail("Expected exception was not thrown for $method with invalid input");
         } catch (InvalidArgumentException $e) {
@@ -249,6 +249,4 @@ class ConversionsTest extends TestCase
         $this->assertEquals(16.09, LengthConversions::milesToKm(10), 0.001);
         $this->assertInvalidInputConversion('LengthConversions::milesToKm', "invalid string", 'Invalid input for milesToKm');
     }
-
-
 }
